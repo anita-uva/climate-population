@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 """
 ## Uncomment this section to run the code locally, in Spyder ##
