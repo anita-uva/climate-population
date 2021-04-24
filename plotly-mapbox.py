@@ -84,5 +84,34 @@ fig.update_layout(mapbox_style = "carto-positron", mapbox_zoom = 3, mapbox_cente
 first_title = options_list[0]
 fig.update_layout(title = f"<b>{first_title.title()}</b><br><sub>{subtitles.loc[first_title][0]}</sub>", title_x = 0.5)
 
+# Set a size for web deployment.. for local defaults were fine.
+fig.update_layout(autosize=False,width=1400,height=700,margin=dict(l=50,r=50,b=100,t=100,pad=4), paper_bgcolor="Linen",)
+
 ## Show our map!
-fig.show()
+## fig.show() ## use dash to render instead of show
+
+## Now, introduce dash
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+import pandas as pd
+
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+app.layout = html.Div(children=[
+    html.H1(children='Climate Change Attitudes with Population Density'),
+
+    html.Div(children='''
+        Group 4: Elena, Jonathan, & Anita.
+    '''),
+
+    dcc.Graph(
+        id='mapbox-usa-counties',
+        figure=fig
+    )
+])
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
