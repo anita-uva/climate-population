@@ -54,7 +54,6 @@ buttons = []
 
 # Use "varchoice" to store the chosen list item name
 for varchoice in options_list:
-    
     ## Add a new trace for each item in the options list
     traces.append(go.Choroplethmapbox(
         geojson=counties, 
@@ -67,23 +66,19 @@ for varchoice in options_list:
         customdata = df[['GeoName','PopDensity','democrat_votes','republican_votes']],
         hovertemplate='%{customdata[0]}<br><br>' + 'Population Density: %{customdata[1]:,.2f} /sq. mile<br>' + '2016 Democrat Votes: %{customdata[2]:,}<br>' + '2016 Republican Votes: %{customdata[3]:,}<br>' + '<extra>%{fullData.name}: %{z:.1f}%</extra>',        
         visible = True if varchoice==options_list[0] else False))
-
     ## Add a button for each trace
-    buttons.append(dict(label  = varchoice.title(),
-                        method = "update",
-                        args   =[ { "visible" : list(visible == varchoice)}, { "title" : f"<b>{varchoice.title()}</b><br><sub>{subtitles.loc[varchoice][0]}</sub>"} ]))
+    buttons.append(dict(label  = varchoice.title(), method = "update", args   =[ { "visible" : list(visible == varchoice)}, { "title" : f"<b>{varchoice.title()}</b><br><sub>{subtitles.loc[varchoice][0]}</sub>"} ]))
+
 ## Track which list item is active
 ## And the action to take (buttons) when active
 updatemenus = [ { "active" : 0, "buttons" : buttons, } ]
 
 ## The Figure Object brings together the "data" in the form of maps
 ## And the list items, in the form of buttons, which are stored in updatemenus
-fig = go.Figure(data   = traces,
-                layout = dict(updatemenus = updatemenus))
+fig = go.Figure(data   = traces, layout = dict(updatemenus = updatemenus))
 
 ## Finish defining the mapbox layout wiht mapbox attributes
-fig.update_layout(mapbox_style = "carto-positron",
-                  mapbox_zoom = 3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
+fig.update_layout(mapbox_style = "carto-positron", mapbox_zoom = 3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
 
 # Set need an initial value for title and subtitle
 first_title = options_list[0]
