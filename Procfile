@@ -1,1 +1,1 @@
-web: python plotly-mapbox.py
+web: gunicorn app:server
