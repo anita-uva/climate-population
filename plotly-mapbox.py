@@ -75,8 +75,7 @@ for varchoice in options_list:
     ## Add a button for each trace
     buttons.append(dict(label  = varchoice.title(),
                         method = "update",
-                        args   =[ { "visible" : list(visible == varchoice)},
-                                  { "title"   : f"<b>{varchoice.title()}</b><br><sub>{subtitles.loc[varchoice][0]}</sub>"     } ]))
+                        args   =[ { "visible" : list(visible == varchoice)}, { "title" : f"<b>{varchoice.title()}</b><br><sub>{subtitles.loc[varchoice][0]}</sub>"} ]))
 ## Track which list item is active
 ## And the action to take (buttons) when active
 updatemenus = [ { "active" : 0, "buttons" : buttons, } ]
