@@ -38,7 +38,7 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
 ## as a drop down.
 options_list = ['happening','reducetax','CO2limits','localofficials','governor', 
                 'congress','president','corporations','citizens','regulate',
-                'supportRPS','drilloffshore','drillANWR','fundrenewables',
+##                'supportRPS','drilloffshore','drillANWR','fundrenewables',
 ##                'rebates','mediaweekly','gwvoteimp','teachGW','priority',
 ##                'discuss','human','consensus','worried','personal','harmUS',
 ##                'devharm','futuregen','harmplants','timing', 'affectweather',
