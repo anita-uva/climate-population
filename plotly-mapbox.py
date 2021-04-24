@@ -65,11 +65,7 @@ for varchoice in options_list:
         colorbar_title=varchoice.title(),
         name=varchoice.title(),
         customdata = df[['GeoName','PopDensity','democrat_votes','republican_votes']],
-        hovertemplate='%{customdata[0]}<br><br>' +
-        'Population Density: %{customdata[1]:,.2f} /sq. mile<br>' +
-        '2016 Democrat Votes: %{customdata[2]:,}<br>' +
-        '2016 Republican Votes: %{customdata[3]:,}<br>' +                                    
-        '<extra>%{fullData.name}: %{z:.1f}%</extra>',        
+        hovertemplate='%{customdata[0]}<br><br>' + 'Population Density: %{customdata[1]:,.2f} /sq. mile<br>' + '2016 Democrat Votes: %{customdata[2]:,}<br>' + '2016 Republican Votes: %{customdata[3]:,}<br>' + '<extra>%{fullData.name}: %{z:.1f}%</extra>',        
         visible = True if varchoice==options_list[0] else False))
 
     ## Add a button for each trace
