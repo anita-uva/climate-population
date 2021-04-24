@@ -32,18 +32,18 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
     counties = json.load(response)
 
 ## When this list is shorter our map renders faster
-options_list = ['happening', 'CO2limits']  ## Testing Size
+###options_list = ['happening', 'CO2limits']  ## Testing Size
 
 ## These are data column names we are displaying in the map
 ## as a drop down.
-"""options_list = ['happening','reducetax','CO2limits','localofficials','governor', 
+options_list = ['happening','reducetax','CO2limits','localofficials','governor', 
                 'congress','president','corporations','citizens','regulate',
                 'supportRPS','drilloffshore','drillANWR','fundrenewables',
                 'rebates','mediaweekly','gwvoteimp','teachGW','priority',
                 'discuss','human','consensus','worried','personal','harmUS',
                 'devharm','futuregen','harmplants','timing', 'affectweather',
                 'PopDensity']
-"""
+
 ## to track the visibility of the chosen list option
 visible = np.array(options_list)
 
