@@ -32,7 +32,7 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
     counties = json.load(response)
 
 ## When this list is shorter our map renders faster
-options_list = ['happening', 'CO2limits', 'governor', 'corporations']  ## Testing Size
+options_list = ['happening', 'CO2limits']  ## Testing Size
 
 ## These are data column names we are displaying in the map
 ## as a drop down.
@@ -100,18 +100,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-app.layout = html.Div(children=[
-    html.H1(children='Climate Change Attitudes with Population Density'),
-
-    html.Div(children='''
-        Group 4: Elena, Jonathan, & Anita.
-    '''),
-
-    dcc.Graph(
-        id='mapbox-usa-counties',
-        figure=fig
-    )
-])
+app.layout = html.Div(children=[html.H1(children='Climate Change Attitudes with Population Density'),html.Div(children='''Group 4: Elena, Jonathan, & Anita.'''),dcc.Graph(id='mapbox-usa-counties',figure=fig)])
 
 if __name__ == '__main__':
     app.run_server(debug=True)
