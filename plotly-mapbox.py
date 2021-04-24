@@ -37,7 +37,7 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
 ## These are data column names we are displaying in the map
 ## as a drop down.
 options_list = ['happening','reducetax','CO2limits','localofficials','governor', 
-                'congress','president','corporations','citizens','regulate',
+                'congress','president','corporations', ##'citizens','regulate',
 ##                'supportRPS','drilloffshore','drillANWR','fundrenewables',
 ##                'rebates','mediaweekly','gwvoteimp','teachGW','priority',
 ##                'discuss','human','consensus','worried','personal','harmUS',
