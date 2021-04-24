@@ -39,9 +39,9 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
 options_list = ['happening','reducetax','CO2limits','localofficials','governor', 
                 'congress','president','corporations','citizens','regulate',
                 'supportRPS','drilloffshore','drillANWR','fundrenewables',
-                'rebates','mediaweekly','gwvoteimp','teachGW','priority',
-                'discuss','human','consensus','worried','personal','harmUS',
-                'devharm','futuregen','harmplants','timing', 'affectweather',
+##                'rebates','mediaweekly','gwvoteimp','teachGW','priority',
+##                'discuss','human','consensus','worried','personal','harmUS',
+##                'devharm','futuregen','harmplants','timing', 'affectweather',
                 'PopDensity']
 
 ## to track the visibility of the chosen list option
