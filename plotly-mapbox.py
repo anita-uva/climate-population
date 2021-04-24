@@ -94,13 +94,25 @@ fig.update_layout(autosize=False,width=1400,height=700,margin=dict(l=50,r=50,b=1
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import pandas as pd
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-app.layout = html.Div(children=[html.H1(children='Climate Change Attitudes with Population Density'),html.Div(children='''Group 4: Elena, Jonathan, & Anita.'''),dcc.Graph(id='mapbox-usa-counties',figure=fig)])
+server = app.server
+
+app.layout = html.Div(children=[
+    html.H1(children='Climate Change Attitudes with Population Density'),
+
+    html.Div(children='''
+        Group 4: Elena, Jonathan, & Anita.
+    '''),
+
+    dcc.Graph(
+        id='mapbox-usa-counties',
+        figure=fig
+    )
+])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(port=8051,debug=True)
