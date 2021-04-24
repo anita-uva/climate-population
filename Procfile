@@ -1,1 +1,1 @@
-web: gunicorn plotly-mapbox:server
+web: gunicorn plotly-mapbox:server --preload
