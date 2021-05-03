@@ -32,15 +32,15 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
     counties = json.load(response)
 
 ## When this list is shorter our map renders faster
-###options_list = ['happening', 'CO2limits']  ## Testing Size
+###options_list = ['happening', 'worried']  ## Testing Size
 
 ## These are data column names we are displaying in the map
 ## as a drop down.
-options_list = ['happening','reducetax','CO2limits','localofficials','governor', 
+options_list = ['happening','worried','priority','localofficials','governor', 
 ##                'congress','president','corporations','citizens','regulate',
 ##                'supportRPS','drilloffshore','drillANWR','fundrenewables',
-##                'rebates','mediaweekly','gwvoteimp','teachGW','priority',
-##                'discuss','human','consensus','worried','personal','harmUS',
+##                'rebates','mediaweekly','gwvoteimp','teachGW','CO2limits',
+##                'discuss','human','consensus','reducetax','personal','harmUS',
 ##                'devharm','futuregen','harmplants','timing', 'affectweather',
                 'PopDensity']
 
@@ -59,7 +59,7 @@ for varchoice in options_list:
         geojson=counties, 
         locations=df.fips, # Spatial coordinates
         z=df[varchoice],   # Data to be color-coded
-        colorscale="viridis", zmin=0, zmax=100,
+        colorscale="viridis", zmin=40, zmax=80,
         marker_opacity=0.5, marker_line_width=0, 
         colorbar_title=varchoice.title(),
         name=varchoice.title(),
